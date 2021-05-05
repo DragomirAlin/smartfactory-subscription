@@ -11,9 +11,10 @@ import ro.dragomialin.subscription.service.ListenerService;
 @Service
 @RequiredArgsConstructor
 public class RabbitMQListener implements ListenerService {
+    private static final String QUEUE_NAME = "smartfactory.queue";
 
     @Override
-    @RabbitListener(queues = "smartfactory.queue")
+    @RabbitListener(queues = QUEUE_NAME)
     public void listen(final Subscription subscription) {
         log.info("Message from myQueue: {}.", subscription.getId());
     }

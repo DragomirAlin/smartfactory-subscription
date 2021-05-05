@@ -16,14 +16,12 @@ import ro.dragomialin.subscription.service.SenderService;
 public class RabbitMQSender implements SenderService {
     private final RabbitTemplate rabbitTemplate;
     @Value("${smartfactory.rabbitmq.exchange}")
-    public String exchange;
+    private String exchange;
     @Value("${smartfactory.rabbitmq.routingkey}")
     private String routingkey;
 
     @Override
-    @Scheduled(fixedDelay = 3000L)
-    public void send() {
-        log.info("Sending message...");
-        rabbitTemplate.convertAndSend(exchange, routingkey, Subscription.builder().id("1").build());
+    public void send(Subscription subscription) {
+        rabbitTemplate.convertAndSend(exchange, routingkey, subscription);
     }
 }
