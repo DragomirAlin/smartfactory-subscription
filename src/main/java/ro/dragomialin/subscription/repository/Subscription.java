@@ -19,6 +19,7 @@ import java.util.Date;
 public class Subscription {
     public String id;
     public Type type;
+    public long version;
     public Object subscription;
     @CreatedDate
     public Date createdAt;
