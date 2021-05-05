@@ -13,6 +13,12 @@ spring:
       host: 192.168.1.5
       port: 27017
 
+  rabbitmq:
+    host: 192.168.1.5
+    port: 5672
+    username: admin
+    password: admin
+
 server:
   port: 8005
 eureka:
@@ -27,3 +33,4 @@ smartfactory:
     exchange: smartfactory.exchange
     queue: smartfactory.queue
     routingkey: smartfactory.routingkey
+
