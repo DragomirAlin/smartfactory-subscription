@@ -21,3 +21,9 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://discUser:discPassword@192.168.1.5:8761/eureka
+
+smartfactory:
+  rabbitmq:
+    exchange: smartfactory.exchange
+    queue: smartfactory.queue
+    routingkey: smartfactory.routingkey
