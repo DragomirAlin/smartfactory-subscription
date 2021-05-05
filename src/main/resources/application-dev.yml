@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: subscription-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuerUri: http://192.168.1.5:8083/auth/realms/baeldung
+          jwkSetUri: http://192.168.1.5:8083/auth/realms/baeldung/protocol/openid-connect/certs
+  data:
+    mongodb:
+      database: smartfactory-subscription
+      host: 192.168.1.5
+      port: 27017
+
+server:
+  port: 8005
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://discUser:discPassword@192.168.1.5:8761/eureka
