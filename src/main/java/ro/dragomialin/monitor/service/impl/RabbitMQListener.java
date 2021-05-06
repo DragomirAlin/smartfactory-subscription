@@ -11,7 +11,7 @@ import ro.dragomialin.monitor.service.ListenerService;
 @Service
 @RequiredArgsConstructor
 public class RabbitMQListener implements ListenerService {
-    private static final String QUEUE_NAME = "smartfactory.queue";
+    private static final String QUEUE_NAME = "queue.mqtt";
 
     @Override
     @RabbitListener(queues = QUEUE_NAME)

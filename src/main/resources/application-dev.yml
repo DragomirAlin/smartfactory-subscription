@@ -28,7 +28,8 @@ eureka:
 
 smartfactory:
   rabbitmq:
-    exchange: smartfactory.exchange
-    queue: smartfactory.queue
-    routingkey: smartfactory.routingkey
+    mqtt:
+      exchange: exchange.mqtt
+      queue: queue.mqtt
+      routingkey: routingkey.mqtt
 

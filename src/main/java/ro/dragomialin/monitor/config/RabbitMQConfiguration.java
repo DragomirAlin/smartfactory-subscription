@@ -13,11 +13,11 @@ import org.springframework.stereotype.Service;
 @Service
 @Configuration
 public class RabbitMQConfiguration {
-    @Value("${smartfactory.rabbitmq.queue}")
+    @Value("${smartfactory.rabbitmq.mqtt.queue}")
     private String queueName;
-    @Value("${smartfactory.rabbitmq.exchange}")
+    @Value("${smartfactory.rabbitmq.mqtt.exchange}")
     private String exchange;
-    @Value("${smartfactory.rabbitmq.routingkey}")
+    @Value("${smartfactory.rabbitmq.mqtt.routingkey}")
     private String routingkey;
 
     @Bean

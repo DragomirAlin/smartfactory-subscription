@@ -13,9 +13,9 @@ import ro.dragomialin.monitor.service.SenderService;
 @RequiredArgsConstructor
 public class RabbitMQSender implements SenderService {
     private final RabbitTemplate rabbitTemplate;
-    @Value("${smartfactory.rabbitmq.exchange}")
+    @Value("${smartfactory.rabbitmq.mqtt.exchange}")
     private String exchange;
-    @Value("${smartfactory.rabbitmq.routingkey}")
+    @Value("${smartfactory.rabbitmq.mqtt.routingkey}")
     private String routingkey;
 
     @Override
