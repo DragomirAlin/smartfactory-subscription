@@ -1,6 +1,6 @@
 package ro.dragomialin.subscription.service;
 
-import ro.dragomialin.subscription.repository.Subscription;
+import ro.dragomialin.subscription.model.Subscription;
 
 import java.util.List;
 

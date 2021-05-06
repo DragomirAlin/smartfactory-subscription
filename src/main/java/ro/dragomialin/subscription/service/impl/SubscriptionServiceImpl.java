@@ -3,7 +3,7 @@ package ro.dragomialin.subscription.service.impl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ro.dragomialin.subscription.repository.Subscription;
+import ro.dragomialin.subscription.model.Subscription;
 import ro.dragomialin.subscription.repository.SubscriptionRepository;
 import ro.dragomialin.subscription.service.SubscriptionService;
 

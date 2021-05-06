@@ -2,12 +2,10 @@ package ro.dragomialin.subscription.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import ro.dragomialin.subscription.repository.Subscription;
+import ro.dragomialin.subscription.model.Subscription;
 import ro.dragomialin.subscription.service.SenderService;
 
 @Slf4j
