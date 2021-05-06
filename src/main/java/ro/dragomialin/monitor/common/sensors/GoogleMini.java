@@ -1,4 +1,9 @@
 package ro.dragomialin.monitor.common.sensors;
 
-public class GoogleMini {
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+
+@Data
+@SuperBuilder
+public class GoogleMini extends Acquisition{
 }

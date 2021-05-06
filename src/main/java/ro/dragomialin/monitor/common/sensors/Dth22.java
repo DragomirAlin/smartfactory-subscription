@@ -1,13 +1,12 @@
 package ro.dragomialin.monitor.common.sensors;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @Builder
-@RequiredArgsConstructor
-public class Dth22 {
+@SuperBuilder
+public class Dth22 extends Acquisition{
     private double temperature;
     private double humidify;
 }
