@@ -1,4 +1,4 @@
-package ro.dragomialin.subscription.model;
+package ro.dragomialin.monitor.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,7 +15,7 @@ import java.util.Date;
 @Document
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class Subscription {
+public class Monitor {
     public String id;
     public Type type;
     public long version;

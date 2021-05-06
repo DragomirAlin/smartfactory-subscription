@@ -1,4 +1,4 @@
-package ro.dragomialin.subscription.config;
+package ro.dragomialin.monitor.config;
 
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;

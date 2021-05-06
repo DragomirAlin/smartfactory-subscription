@@ -1,12 +1,12 @@
-package ro.dragomialin.subscription;
+package ro.dragomialin.monitor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SubscriptionApplication {
+public class MonitorApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(SubscriptionApplication.class, args);
+		SpringApplication.run(MonitorApplication.class, args);
 	}
 
 }

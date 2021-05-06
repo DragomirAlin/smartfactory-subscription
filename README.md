@@ -1,2 +1,2 @@
-# smartfactory-subscription
+# smartfactory-monitor
 :zap: Subscription microservice

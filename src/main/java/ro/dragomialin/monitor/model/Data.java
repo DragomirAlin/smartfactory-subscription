@@ -1,4 +1,4 @@
-package ro.dragomialin.subscription.model;
+package ro.dragomialin.monitor.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

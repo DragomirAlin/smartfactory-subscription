@@ -1,10 +1,10 @@
-package ro.dragomialin.subscription;
+package ro.dragomialin.monitor;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SubscriptionApplicationTests {
+class MonitorApplicationTests {
 
 	@Test
 	void contextLoads() {

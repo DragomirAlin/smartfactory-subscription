@@ -1,6 +1,6 @@
 spring:
   application:
-    name: subscription-service
+    name: monitor-service
   security:
     oauth2:
       resourceserver:
