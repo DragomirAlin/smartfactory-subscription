@@ -14,4 +14,5 @@ public  class Metadata {
     private Date timestamp;
     private String maintainer;
     private String lastMaintain;
+    private String acquisitionType;
 }

@@ -4,7 +4,7 @@ import ro.dragomialin.monitor.model.Monitor;
 
 import java.util.List;
 
-public interface SubscriptionService {
+public interface MonitorService {
     Monitor add(Monitor monitor);
     void delete(String id);
     List<Monitor> getAll();

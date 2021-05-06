@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ro.dragomialin.monitor.model.Monitor;
 import ro.dragomialin.monitor.repository.MonitorRepository;
-import ro.dragomialin.monitor.service.SubscriptionService;
+import ro.dragomialin.monitor.service.MonitorService;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class SubscriptionServiceImpl implements SubscriptionService {
+public class MonitorServiceImpl implements MonitorService {
     private final MonitorRepository repository;
 
     @Override

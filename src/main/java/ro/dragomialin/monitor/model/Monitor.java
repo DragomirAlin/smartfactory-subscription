@@ -4,11 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import javax.validation.constraints.Email;
+
 
 @Data
 @Builder
@@ -16,16 +15,18 @@ import java.util.Date;
 @RequiredArgsConstructor
 @AllArgsConstructor
 public class Monitor {
-    public String id;
-    public Type type;
-    public long version;
-    public Object subscription;
-    @CreatedDate
-    public Date createdAt;
-    @LastModifiedDate
-    public Date updatedAt;
+    private String id;
+    private String macAddress;
+    private String acquisitionType;
+    private Type type;
+    private double value;
+    private boolean sendEmail;
+    private boolean sendSMS;
+    @Email
+    private String email;
+    private String phoneNumber;
 
     public enum Type {
-        DEVICE, TOPIC,
+        LESS, EQUAL
     }
 }
