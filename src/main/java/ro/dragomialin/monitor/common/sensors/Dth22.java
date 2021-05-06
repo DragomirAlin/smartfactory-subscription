@@ -5,8 +5,7 @@ import lombok.experimental.SuperBuilder;
 
 @Data
 @Builder
-@SuperBuilder
-public class Dth22 extends Acquisition{
+public class Dth22 {
     private double temperature;
     private double humidify;
 }

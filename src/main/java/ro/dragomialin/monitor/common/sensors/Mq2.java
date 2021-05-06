@@ -7,7 +7,6 @@ import lombok.experimental.SuperBuilder;
 
 @Data
 @Builder
-@SuperBuilder
-public class Mq2 extends Acquisition {
+public class Mq2 {
     private double gasValue;
 }
