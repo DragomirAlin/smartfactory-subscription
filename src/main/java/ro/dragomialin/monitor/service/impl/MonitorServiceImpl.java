@@ -3,6 +3,7 @@ package ro.dragomialin.monitor.service.impl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import ro.dragomialin.monitor.common.exception.HttpError;
 import ro.dragomialin.monitor.model.Monitor;
 import ro.dragomialin.monitor.repository.MonitorRepository;
 import ro.dragomialin.monitor.service.MonitorService;
@@ -39,6 +40,6 @@ public class MonitorServiceImpl implements MonitorService {
     public Monitor getById(String id) {
         log.info("Get subscription by id={}.", id);
         return repository.findById(id)
-                .orElseThrow(() -> new NullPointerException());
+                .orElseThrow(() -> HttpError.notFound(String.format("Monitor with id %s was not found.", id)));
     }
 }
