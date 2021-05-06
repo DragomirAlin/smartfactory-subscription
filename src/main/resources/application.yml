@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: monitor-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuerUri: http://192.168.1.5:8083/auth/realms/baeldung
+          jwkSetUri: http://192.168.1.5:8083/auth/realms/baeldung/protocol/openid-connect/certs
+  data:
+    mongodb:
+      database: smartfactory-subscription
+      host: 192.168.1.5
+      port: 27017
+  rabbitmq:
+    host: 192.168.1.5
+    port: 5672
+    username: admin
+    password: admin
+server:
+  port: 8005
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://discUser:discPassword@192.168.1.5:8761/eureka
+
+smartfactory:
+  rabbitmq:
+    mqtt:
+      exchange: exchange.mqtt
+      queue: queue.mqtt
+      routingkey: routingkey.mqtt
+
