@@ -1,4 +1,4 @@
-package ro.dragomialin.monitor.model;
+package ro.dragomialin.monitor.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,4 +17,5 @@ public class Data {
     private Object payload;
     @CreatedDate
     private Date arriveAt;
+    private Metadata metadata;
 }
