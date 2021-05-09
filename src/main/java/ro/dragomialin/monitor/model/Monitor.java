@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
+import ro.dragomialin.monitor.common.DeviceType;
 
 import javax.validation.constraints.Email;
 
@@ -18,7 +19,8 @@ public class Monitor {
     private String id;
     private String macAddress;
     private String acquisitionType;
-    private Type type;
+    private Operator operator;
+    private DeviceType device;
     private double value;
     private boolean sendEmail;
     private boolean sendSMS;
@@ -26,7 +28,7 @@ public class Monitor {
     private String email;
     private String phoneNumber;
 
-    public enum Type {
+    public enum Operator {
         LESS, EQUAL
     }
 }

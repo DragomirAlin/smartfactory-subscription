@@ -4,14 +4,20 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ro.dragomialin.monitor.common.Data;
+import ro.dragomialin.monitor.model.Monitor;
+import ro.dragomialin.monitor.service.MonitorService;
+
+import java.util.Optional;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class MacAddressFilter implements Filter {
+public class MacAddressFilter {
+    private final MonitorService monitorService;
 
-    @Override
-    public boolean apply(Data data) {
-        return false;
+    public Optional<Monitor> getMonitor(Data data) {
+        return monitorService.getAll().stream()
+                .filter(m -> m.getMacAddress().equals(data.getMetadata().getMacAddress()))
+                .findFirst();
     }
 }
