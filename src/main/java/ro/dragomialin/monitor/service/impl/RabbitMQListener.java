@@ -4,19 +4,20 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Service;
-import ro.dragomialin.monitor.model.Monitor;
-import ro.dragomialin.monitor.service.ListenerService;
+import ro.dragomialin.monitor.common.Data;
+import ro.dragomialin.monitor.service.MessageGateway;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class RabbitMQListener implements ListenerService {
+public class RabbitMQListener {
     private static final String QUEUE_NAME = "queue.mqtt";
+    private final MessageGateway messageGateway;
 
-    @Override
     @RabbitListener(queues = QUEUE_NAME)
-    public void listen(final Monitor subscription) {
-        log.info("Message from myQueue: {}.", subscription.getId());
+    public void messageFromMQTT(final Data data) {
+        log.info("Message from MQTT: {}.", data.getId());
+        messageGateway.applyFilters(data);
     }
 
 

@@ -19,7 +19,7 @@ public class MonitorServiceImpl implements MonitorService {
 
     @Override
     public Monitor add(Monitor monitor) {
-        log.info("Add new subscription to system. Subscription type={}.", monitor.getType());
+        log.info("Add new subscription to system. Subscription type={}.", monitor.getAcquisitionType());
         return repository.save(monitor);
     }
 
