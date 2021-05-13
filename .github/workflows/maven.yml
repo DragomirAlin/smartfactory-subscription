@@ -1,6 +1,10 @@
 name: Subscription CI
 on:
-  push
+  push:
+    branches:
+      - "!*"
+    tags:
+      - "v*"
 jobs:
   build:
     runs-on: ubuntu-latest
