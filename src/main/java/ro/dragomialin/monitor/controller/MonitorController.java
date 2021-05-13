@@ -2,7 +2,7 @@ package ro.dragomialin.monitor.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import ro.dragomialin.monitor.model.Monitor;
+import ro.dragomialin.monitor.common.Monitor;
 import ro.dragomialin.monitor.service.MonitorService;
 
 import java.util.List;

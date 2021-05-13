@@ -1,6 +1,6 @@
 package ro.dragomialin.monitor.service;
 
-import ro.dragomialin.monitor.model.Monitor;
+import ro.dragomialin.monitor.common.Monitor;
 
 import java.util.List;
 

@@ -2,10 +2,9 @@ package ro.dragomialin.monitor.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import ro.dragomialin.monitor.common.Data;
-import ro.dragomialin.monitor.model.Monitor;
+import ro.dragomialin.monitor.common.Monitor;
 import ro.dragomialin.monitor.service.filtering.Filter;
 import ro.dragomialin.monitor.service.filtering.MacAddressFilter;
 import ro.dragomialin.monitor.service.impl.RabbitMQSender;

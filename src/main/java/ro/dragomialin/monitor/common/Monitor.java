@@ -1,11 +1,10 @@
-package ro.dragomialin.monitor.model;
+package ro.dragomialin.monitor.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
-import ro.dragomialin.monitor.common.DeviceType;
 
 import javax.validation.constraints.Email;
 

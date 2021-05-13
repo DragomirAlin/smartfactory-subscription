@@ -5,9 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import ro.dragomialin.monitor.common.Data;
-import ro.dragomialin.monitor.model.Monitor;
-
-import java.util.Optional;
+import ro.dragomialin.monitor.common.Monitor;
 
 @Slf4j
 @Service

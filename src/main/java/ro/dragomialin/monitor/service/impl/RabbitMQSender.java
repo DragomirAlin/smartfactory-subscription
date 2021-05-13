@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import ro.dragomialin.monitor.model.Monitor;
+import ro.dragomialin.monitor.common.Monitor;
 import ro.dragomialin.monitor.service.SenderService;
 
 @Slf4j

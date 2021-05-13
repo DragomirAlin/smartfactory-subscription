@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import ro.dragomialin.monitor.common.Data;
 import ro.dragomialin.monitor.common.sensors.Dth22;
-import ro.dragomialin.monitor.model.Monitor;
+import ro.dragomialin.monitor.common.Monitor;
 
 @Slf4j
 @Component
