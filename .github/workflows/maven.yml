@@ -1,10 +1,10 @@
 name: Subscription CI
-
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - "!*"
+    tags:
+      - "v*"
 
 jobs:
   build:
