@@ -16,6 +16,9 @@
     <properties>
         <java.version>11</java.version>
         <spring-cloud.version>Hoxton.BUILD-SNAPSHOT</spring-cloud.version>
+        <sonar.projectKey>DragomirAlin_smartfactory-subscription</sonar.projectKey>
+        <sonar.organization>dragomiralin</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
     <dependencies>
         <dependency>
@@ -160,5 +163,4 @@
             </releases>
         </pluginRepository>
     </pluginRepositories>
-
 </project>

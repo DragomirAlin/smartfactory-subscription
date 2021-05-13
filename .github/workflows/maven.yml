@@ -1,10 +1,4 @@
 name: Subscription CI
-on:
-  push:
-    branches:
-      - "!*"
-    tags:
-      - "v*"
 
 jobs:
   build:
@@ -19,6 +13,23 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn -B package --file pom.xml
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache Maven packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.SONAR_GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
@@ -37,6 +48,3 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smartfactory-subscription:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-
-
-
