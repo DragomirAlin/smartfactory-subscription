@@ -1,4 +1,4 @@
-package ro.dragomialin.monitor.service.filtering;
+package ro.dragomialin.monitor.service.filter;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,9 +9,9 @@ import ro.dragomialin.monitor.common.Monitor;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class DeviceTypeFilter implements Filter {
+public class StateFilter implements Filter {
     @Override
     public boolean apply(Data data, Monitor monitor) {
-        return monitor.getDevice().equals(data.getMetadata().getDevice());
+        return false;
     }
 }

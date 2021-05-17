@@ -1,4 +1,4 @@
-package ro.dragomialin.monitor.service.filtering;
+package ro.dragomialin.monitor.service.filter;
 
 import ro.dragomialin.monitor.common.Data;
 import ro.dragomialin.monitor.common.Monitor;

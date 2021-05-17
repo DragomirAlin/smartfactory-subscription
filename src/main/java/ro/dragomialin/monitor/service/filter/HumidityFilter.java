@@ -1,4 +1,4 @@
-package ro.dragomialin.monitor.service.filtering;
+package ro.dragomialin.monitor.service.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;

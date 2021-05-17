@@ -7,7 +7,7 @@ import java.util.List;
 public interface MonitorService {
     Monitor add(Monitor monitor);
     void delete(String id);
-    List<Monitor> getAll();
-    Monitor getById(String id);
+    List<Monitor> getAllMonitors();
+    Monitor getMonitorById(String id);
 
 }

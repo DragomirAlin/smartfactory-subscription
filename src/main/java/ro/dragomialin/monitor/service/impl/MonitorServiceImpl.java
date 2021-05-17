@@ -25,19 +25,19 @@ public class MonitorServiceImpl implements MonitorService {
 
     @Override
     public void delete(String id) {
-        Monitor monitor = getById(id);
+        Monitor monitor = getMonitorById(id);
         log.info("Delete subscription with id={}.", monitor.getId());
         repository.delete(monitor);
     }
 
     @Override
-    public List<Monitor> getAll() {
+    public List<Monitor> getAllMonitors() {
         log.info("Get all subscriptions.");
         return repository.findAll();
     }
 
     @Override
-    public Monitor getById(String id) {
+    public Monitor getMonitorById(String id) {
         log.info("Get subscription by id={}.", id);
         return repository.findById(id)
                 .orElseThrow(() -> HttpError.notFound(String.format("Monitor with id %s was not found.", id)));

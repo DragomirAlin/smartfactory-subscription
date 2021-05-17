@@ -2,37 +2,42 @@ package ro.dragomialin.monitor.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 import ro.dragomialin.monitor.common.Data;
 import ro.dragomialin.monitor.common.Monitor;
-import ro.dragomialin.monitor.service.filtering.Filter;
-import ro.dragomialin.monitor.service.filtering.MacAddressFilter;
+import ro.dragomialin.monitor.service.filter.Filter;
 import ro.dragomialin.monitor.service.impl.RabbitMQSender;
+
+import javax.annotation.PostConstruct;
+import java.util.Map;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class MessageGateway {
     private final MonitorService monitorService;
-    private final Filter temperatureFilter;
-    private final Filter humidityFilter;
-    private final MacAddressFilter macAddressFilter;
     private final RabbitMQSender rabbitMQSender;
+    private final ApplicationContext applicationContext;
+    private Map<String, Filter> filterList;
 
-    public void applyFilters(Data data) {
-        monitorService.getAll().forEach(m -> handle(data, m));
+    @PostConstruct
+    public void addFilters() {
+        this.filterList = applicationContext.getBeansOfType(Filter.class);
     }
 
-    private boolean checkFilters(Data data, Monitor monitor) {
-        boolean isAlert = macAddressFilter.apply(data, monitor);
-        isAlert |= temperatureFilter.apply(data, monitor);
-        isAlert |= humidityFilter.apply(data, monitor);
+    public void processData(Data data) {
+        monitorService.getAllMonitors()
+                .forEach(monitor -> this.handle(data, monitor));
+    }
 
-        return isAlert;
+    private boolean applyFilters(Data data, Monitor monitor) {
+        return filterList.values().stream()
+                .allMatch(f -> f.apply(data, monitor));
     }
 
     private void handle(Data data, Monitor monitor) {
-        boolean isAlert = this.checkFilters(data, monitor);
+        boolean isAlert = this.applyFilters(data, monitor);
 
         if (isAlert) {
             log.info("Send notification for monitor={}.", monitor.getId());

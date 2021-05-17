@@ -19,12 +19,12 @@ public class MonitorController {
 
     @GetMapping("/all")
     public List<Monitor> getAll() {
-        return monitorService.getAll();
+        return monitorService.getAllMonitors();
     }
 
     @GetMapping("/{id}")
     public Monitor getMonitor(@PathVariable String id){
-        return monitorService.getById(id);
+        return monitorService.getMonitorById(id);
     }
 
     @DeleteMapping("/{id}")

@@ -1,4 +1,4 @@
-package ro.dragomialin.monitor.service.filtering;
+package ro.dragomialin.monitor.service.filter;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

@@ -17,7 +17,7 @@ public class RabbitMQListener {
     @RabbitListener(queues = QUEUE_NAME)
     public void messageFromMQTT(final Data data) {
         log.info("Message from MQTT: {}.", data.getId());
-        messageGateway.applyFilters(data);
+        messageGateway.processData(data);
     }
 
 
