@@ -1,11 +1,11 @@
 package ro.dragomialin.monitor.common.sensors;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 @Data
 @Builder
-public class Dth22 {
+@EqualsAndHashCode(callSuper = true)
+public class Dth22 extends Acquisition {
     private double temperature;
     private double humidify;
 }

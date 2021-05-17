@@ -2,9 +2,11 @@ package ro.dragomialin.monitor.common.sensors;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
+import lombok.EqualsAndHashCode;
 
 @Data
 @Builder
-public class GoogleMini {
+@EqualsAndHashCode(callSuper = true)
+public class GoogleMini extends Acquisition {
+    private String message;
 }

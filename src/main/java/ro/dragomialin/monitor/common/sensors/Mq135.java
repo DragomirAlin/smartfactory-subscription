@@ -2,11 +2,11 @@ package ro.dragomialin.monitor.common.sensors;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
-import lombok.experimental.SuperBuilder;
+import lombok.EqualsAndHashCode;
 
 @Data
 @Builder
-public class Mq2 {
+@EqualsAndHashCode(callSuper = true)
+public class Mq135 extends Acquisition {
     private double gasValue;
 }
