@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class HumidityFilter implements Filter {
     private final ObjectMapper objectMapper;
-    private final List<AcqusitionType> allowedAcqusitions = List.of(AcqusitionType.DTH11, AcqusitionType.GOOGLE_MINI);
+    private final List<AcqusitionType> allowedAcqusitions = List.of(AcqusitionType.DTH11, AcqusitionType.DTH22);
 
     @Override
     public boolean apply(Data data, Monitor monitor) {
