@@ -25,11 +25,17 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://discUser:discPassword@192.168.1.5:8761/eureka
-
 smartfactory:
   rabbitmq:
     mqtt:
       exchange: exchange.mqtt
       queue: queue.mqtt
       routingkey: routingkey.mqtt
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
