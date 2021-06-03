@@ -1,8 +1,8 @@
 package ro.dragomialin.monitor.service.filter;
 
 import ro.dragomialin.monitor.common.Data;
-import ro.dragomialin.monitor.common.Monitor;
+import ro.dragomialin.monitor.common.Subscription;
 
 public interface Filter {
-    boolean apply(Data data, Monitor monitor);
+    boolean apply(Data data, Subscription subscription);
 }

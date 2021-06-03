@@ -1,6 +1,6 @@
 package ro.dragomialin.monitor.service.filter;
 
-import ro.dragomialin.monitor.common.Monitor;
+import ro.dragomialin.monitor.common.Subscription;
 
 public class FilterUtils {
 
@@ -8,7 +8,7 @@ public class FilterUtils {
 
     }
 
-    public static boolean applyOperator(double firstValue, double secondValue, Monitor.Operator operator){
+    public static boolean applyOperator(double firstValue, double secondValue, Subscription.Operator operator){
         return switch (operator){
             case LESS -> firstValue < secondValue;
             case EQUALTO -> firstValue == secondValue;

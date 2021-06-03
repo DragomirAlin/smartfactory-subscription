@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import ro.dragomialin.monitor.common.AcqusitionType;
 import ro.dragomialin.monitor.common.Data;
-import ro.dragomialin.monitor.common.Monitor;
+import ro.dragomialin.monitor.common.Subscription;
 
 import java.util.List;
 
@@ -18,7 +18,7 @@ public class TemperatureFilter implements Filter {
     private final List<AcqusitionType> allowedAcqusitions = List.of(AcqusitionType.DTH11, AcqusitionType.DTH22);
 
     @Override
-    public boolean apply(Data data, Monitor monitor) {
+    public boolean apply(Data data, Subscription subscription) {
         return false;
     }
 }

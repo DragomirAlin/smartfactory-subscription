@@ -1,7 +1,7 @@
 package ro.dragomialin.monitor.service;
 
-import ro.dragomialin.monitor.common.Monitor;
+import ro.dragomialin.monitor.common.Subscription;
 
 public interface SenderService {
-    void send(Monitor monitor);
+    void send(Subscription subscription);
 }

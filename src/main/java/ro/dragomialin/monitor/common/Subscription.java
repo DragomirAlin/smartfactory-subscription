@@ -14,7 +14,7 @@ import javax.validation.constraints.Email;
 @Document
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class Monitor {
+public class Subscription {
     private String id;
     private String macAddress;
     private AcqusitionType acquisitionType;

@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ro.dragomialin.monitor.common.Data;
-import ro.dragomialin.monitor.common.Monitor;
+import ro.dragomialin.monitor.common.Subscription;
 import ro.dragomialin.monitor.service.filter.FilterService;
 import ro.dragomialin.monitor.service.impl.RabbitMQSender;
 
@@ -13,21 +13,21 @@ import ro.dragomialin.monitor.service.impl.RabbitMQSender;
 @Service
 @RequiredArgsConstructor
 public class MessageGateway {
-    private final MonitorService monitorService;
+    private final SubscriptionService subscriptionService;
     private final RabbitMQSender rabbitMQSender;
     private final FilterService filterService;
 
     public void processData(Data data) {
-        monitorService.getAllMonitors()
+        subscriptionService.getAllMonitors()
                 .forEach(monitor -> this.handle(data, monitor));
     }
 
-    private void handle(Data data, Monitor monitor) {
-        boolean isAlert = filterService.applyFilters(data, monitor);
+    private void handle(Data data, Subscription subscription) {
+        boolean isAlert = filterService.applyFilters(data, subscription);
 
         if (isAlert) {
-            log.info("Send notification for monitor={}.", monitor.getId());
-            rabbitMQSender.send(monitor);
+            log.info("Send notification for monitor={}.", subscription.getId());
+            rabbitMQSender.send(subscription);
         }
     }
 }

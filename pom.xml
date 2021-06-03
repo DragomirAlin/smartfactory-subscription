@@ -9,9 +9,9 @@
         <relativePath/>
     </parent>
     <groupId>ro.dragomialin</groupId>
-    <artifactId>monitor</artifactId>
+    <artifactId>subscription</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>monitor</name>
+    <name>subscription</name>
     <description>Subscription Microservice</description>
     <properties>
         <java.version>15</java.version>
