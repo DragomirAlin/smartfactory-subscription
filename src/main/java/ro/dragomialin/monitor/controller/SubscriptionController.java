@@ -7,28 +7,29 @@ import ro.dragomialin.monitor.service.SubscriptionService;
 
 import java.util.List;
 
-@RequestMapping("/monitor")
+@RequestMapping("/subscription")
 @RestController
 @RequiredArgsConstructor
 public class SubscriptionController {
     private final SubscriptionService subscriptionService;
 
-    public Subscription addMonitor(@RequestBody Subscription subscription) {
+    @PostMapping()
+    public Subscription addSubscription(@RequestBody Subscription subscription) {
         return subscriptionService.add(subscription);
     }
 
     @GetMapping("/all")
-    public List<Subscription> getAll() {
+    public List<Subscription> getAllSubscriptions() {
         return subscriptionService.getAllMonitors();
     }
 
     @GetMapping("/{id}")
-    public Subscription getMonitor(@PathVariable String id){
+    public Subscription getSubscription(@PathVariable String id){
         return subscriptionService.getMonitorById(id);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteMonitor(@PathVariable String id){
+    public void deleteSubscription(@PathVariable String id){
         subscriptionService.delete(id);
     }
 

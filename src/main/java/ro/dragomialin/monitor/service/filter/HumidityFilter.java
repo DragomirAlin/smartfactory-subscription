@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class HumidityFilter implements Filter {
     private final ObjectMapper objectMapper;
-    private final List<AcqusitionType> allowedAcqusitions = List.of(AcqusitionType.DTH11, AcqusitionType.DTH22);
+    private final List<AcqusitionType> allowedAcquisitions = List.of(AcqusitionType.DTH11, AcqusitionType.DTH22);
 
     @Override
     public boolean apply(Data data, Subscription subscription) {
@@ -29,6 +29,6 @@ public class HumidityFilter implements Filter {
     }
 
     private boolean skipIfNotSupported(Subscription subscription) {
-        return BooleanUtils.isFalse(allowedAcqusitions.contains(subscription.getAcquisitionType()));
+        return BooleanUtils.isFalse(allowedAcquisitions.contains(subscription.getAcquisitionType()));
     }
 }
