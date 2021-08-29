@@ -5,15 +5,15 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuerUri: http://192.168.1.5:8083/auth/realms/smartfactory
-          jwkSetUri: http://192.168.1.5:8083/auth/realms/smartfactory/protocol/openid-connect/certs
+          issuerUri: http://keycloak:8083/auth/realms/smartfactory
+          jwkSetUri: http://keycloak:8083/auth/realms/smartfactory/protocol/openid-connect/certs
   data:
     mongodb:
       database: smartfactory-subscription
-      host: 192.168.1.5
+      host: mongo
       port: 27017
   rabbitmq:
-    host: 192.168.1.5
+    host: rabbitmq
     port: 5672
     username: admin
     password: admin
@@ -24,7 +24,7 @@ eureka:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://discUser:discPassword@192.168.1.5:8761/eureka
+      defaultZone: http://discUser:discPassword@discovery:8761/eureka
 smartfactory:
   rabbitmq:
     mqtt:
