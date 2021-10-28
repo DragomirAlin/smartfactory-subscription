@@ -1,4 +1,4 @@
-package ro.dragomialin.monitor.service.impl;
+package ro.dragomialin.monitor.rabbitmq;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,14 +12,12 @@ import ro.dragomialin.monitor.service.SenderService;
 @Service
 @RequiredArgsConstructor
 public class RabbitMQSender implements SenderService {
+    @Value("${smartfactory.rabbitmq.mqtt.notification.queue}")
+    private String queue;
     private final RabbitTemplate rabbitTemplate;
-    @Value("${smartfactory.rabbitmq.mqtt.exchange}")
-    private String exchange;
-    @Value("${smartfactory.rabbitmq.mqtt.routingkey}")
-    private String routingkey;
 
     @Override
     public void send(Subscription subscription) {
-        rabbitTemplate.convertAndSend(exchange, routingkey, subscription);
+        rabbitTemplate.convertAndSend(queue, subscription);
     }
 }

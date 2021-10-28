@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import ro.dragomialin.monitor.common.Data;
 import ro.dragomialin.monitor.common.Subscription;
 import ro.dragomialin.monitor.service.filter.FilterService;
-import ro.dragomialin.monitor.service.impl.RabbitMQSender;
+import ro.dragomialin.monitor.rabbitmq.RabbitMQSender;
 
 
 @Slf4j

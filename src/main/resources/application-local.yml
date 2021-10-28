@@ -34,9 +34,11 @@ eureka:
 smartfactory:
   rabbitmq:
     mqtt:
-      exchange: exchange.mqtt
-      queue: queue.mqtt
-      routingkey: routingkey.mqtt
+      acquisition:
+        exchange: mqtt_events
+        queue: mqtt_subscription_queue
+      notification:
+        queue: subscription_notify
 management:
   endpoints:
     web:

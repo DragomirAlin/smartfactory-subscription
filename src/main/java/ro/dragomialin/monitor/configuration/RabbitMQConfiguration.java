@@ -1,4 +1,4 @@
-package ro.dragomialin.monitor.config;
+package ro.dragomialin.monitor.configuration;
 
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -13,26 +13,31 @@ import org.springframework.stereotype.Service;
 @Service
 @Configuration
 public class RabbitMQConfiguration {
-    @Value("${smartfactory.rabbitmq.mqtt.queue}")
-    private String queueName;
-    @Value("${smartfactory.rabbitmq.mqtt.exchange}")
-    private String exchange;
-    @Value("${smartfactory.rabbitmq.mqtt.routingkey}")
-    private String routingkey;
+    @Value("${smartfactory.rabbitmq.mqtt.acquisition.queue}")
+    private String gatewayQueue;
+    @Value("${smartfactory.rabbitmq.mqtt.notification.queue}")
+    private String notificationQueue;
+    @Value("${smartfactory.rabbitmq.mqtt.acquisition.exchange}")
+    private String mqttExchange;
 
     @Bean
     Queue queue() {
-        return new Queue(queueName, false);
+        return new Queue(gatewayQueue, false);
     }
 
     @Bean
-    DirectExchange exchange() {
-        return new DirectExchange(exchange);
+    Queue subscription() {
+        return new Queue(notificationQueue);
     }
 
     @Bean
-    Binding binding(Queue queue, DirectExchange exchange) {
-        return BindingBuilder.bind(queue).to(exchange).with(routingkey);
+    public FanoutExchange fanoutExchange() {
+        return new FanoutExchange(mqttExchange);
+    }
+
+    @Bean
+    Binding bindingSubscription(Queue queue, FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(queue).to(fanoutExchange);
     }
 
     @Bean
