@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class RabbitMQConfiguration {
     @Value("${smartfactory.rabbitmq.mqtt.acquisition.queue}")
     private String gatewayQueue;
-    @Value("${smartfactory.rabbitmq.mqtt.notification.queue}")
+    @Value("${smartfactory.rabbitmq.notification.queue}")
     private String notificationQueue;
     @Value("${smartfactory.rabbitmq.mqtt.acquisition.exchange}")
     private String mqttExchange;
@@ -26,7 +26,7 @@ public class RabbitMQConfiguration {
     }
 
     @Bean
-    Queue subscription() {
+    Queue notificationQueue() {
         return new Queue(notificationQueue);
     }
 

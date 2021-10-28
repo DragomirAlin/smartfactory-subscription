@@ -12,7 +12,7 @@ import ro.dragomialin.monitor.service.SenderService;
 @Service
 @RequiredArgsConstructor
 public class RabbitMQSender implements SenderService {
-    @Value("${smartfactory.rabbitmq.mqtt.notification.queue}")
+    @Value("${smartfactory.rabbitmq.notification.queue}")
     private String queue;
     private final RabbitTemplate rabbitTemplate;
 

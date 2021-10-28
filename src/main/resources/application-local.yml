@@ -37,8 +37,8 @@ smartfactory:
       acquisition:
         exchange: mqtt_events
         queue: mqtt_subscription_queue
-      notification:
-        queue: subscription_notify
+    notification:
+      queue: subscription_notify
 management:
   endpoints:
     web:
