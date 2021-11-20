@@ -1,10 +1,9 @@
 name: Subscription CI
 on:
   push:
-    branches:
-      - "!*"
-    tags:
-      - "v*"
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,7 +16,7 @@ jobs:
           java-version: '15'
           distribution: 'adopt'
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: mvn -B clean package --file pom.xml
       - name: Cache SonarCloud packages
         uses: actions/cache@v1
         with:
@@ -53,3 +52,10 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/smartfactory-subscription:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: smartfactory
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: GithubAction
