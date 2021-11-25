@@ -14,12 +14,6 @@ spring:
     password: admin
 server:
   port: 8005
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    serviceUrl:
-      defaultZone: http://discUser:discPassword@discovery:8761/eureka
 smartfactory:
   rabbitmq:
     mqtt:
