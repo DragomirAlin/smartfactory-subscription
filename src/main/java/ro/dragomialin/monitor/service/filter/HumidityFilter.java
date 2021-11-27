@@ -3,7 +3,7 @@ package ro.dragomialin.monitor.service.filter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.BooleanUtils;
+import org.apache.commons.lang3.BooleanUtils;
 import org.springframework.stereotype.Component;
 import ro.dragomialin.monitor.common.AcqusitionType;
 import ro.dragomialin.monitor.common.Data;
