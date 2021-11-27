@@ -12,6 +12,9 @@ spring:
     port: 5672
     username: admin
     password: admin
+  consul:
+    discovery:
+      enabled: false
 server:
   port: 8005
 smartfactory:
