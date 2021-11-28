@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.validation.constraints.Email;
 
 
 @Data
@@ -31,7 +30,6 @@ public class Subscription {
     public static class NotificationDetails {
         private boolean sendEmail;
         private boolean sendSMS;
-        @Email
         private String email;
         private String phoneNumber;
 
