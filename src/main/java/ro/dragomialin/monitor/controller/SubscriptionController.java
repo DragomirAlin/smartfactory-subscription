@@ -13,6 +13,11 @@ import java.util.List;
 public class SubscriptionController {
     private final SubscriptionService subscriptionService;
 
+    @GetMapping
+    private String testSubscription() {
+        return "Subscription service works";
+    }
+
     @PostMapping()
     public Subscription addSubscription(@RequestBody Subscription subscription) {
         return subscriptionService.add(subscription);
@@ -24,12 +29,12 @@ public class SubscriptionController {
     }
 
     @GetMapping("/{id}")
-    public Subscription getSubscription(@PathVariable String id){
+    public Subscription getSubscription(@PathVariable String id) {
         return subscriptionService.getMonitorById(id);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteSubscription(@PathVariable String id){
+    public void deleteSubscription(@PathVariable String id) {
         subscriptionService.delete(id);
     }
 
