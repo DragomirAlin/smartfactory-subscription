@@ -7,6 +7,13 @@ spring:
         jwt:
           issuerUri: ${KEYCLOAK_URL}/auth/realms/smartfactory
           jwkSetUri: ${KEYCLOAK_URL}/auth/realms/smartfactory/protocol/openid-connect/certs
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+    kubernetes:
+      discovery:
+        all-namespaces: true
   data:
     mongodb:
       database: smartfactory-subscription
