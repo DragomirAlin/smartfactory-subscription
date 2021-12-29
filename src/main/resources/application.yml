@@ -16,7 +16,8 @@ spring:
         all-namespaces: true
   data:
     mongodb:
-      uri: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/smartfactory-subscription?authSource=admin
+#      uri: mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:${MONGO_PORT}/smartfactory-subscription?authSource=admin
+      uri: mongodb://root:8yegPnqjzd@mongo:27017/subscription?authSource=admin
   rabbitmq:
     host: ${RABBITMQ_HOST}
     port: ${RABBITMQ_PORT}
