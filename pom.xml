@@ -23,6 +23,9 @@
         <sonar.projectKey>DragomirAlin_smartfactory-subscription</sonar.projectKey>
         <sonar.organization>dragomiralin</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <spring-sleuth.version>3.1.1</spring-sleuth.version>
+        <logstash-logback-encoder.version>5.3</logstash-logback-encoder.version>
+        <logback-core.version>1.2.3</logback-core.version>
     </properties>
     <dependencies>
         <dependency>
@@ -100,6 +103,21 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <version>${spring-sleuth.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.logstash.logback</groupId>
+            <artifactId>logstash-logback-encoder</artifactId>
+            <version>${logstash-logback-encoder.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback-core.version}</version>
         </dependency>
     </dependencies>
     <dependencyManagement>
