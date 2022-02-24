@@ -1,4 +1,4 @@
-package ro.dragomialin.monitor.service.filter;
+package ro.dragomialin.monitor.service.filter.filters;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -9,6 +9,8 @@ import ro.dragomialin.monitor.common.AcqusitionType;
 import ro.dragomialin.monitor.common.Data;
 import ro.dragomialin.monitor.common.Subscription;
 import ro.dragomialin.monitor.common.sensors.Dth22;
+import ro.dragomialin.monitor.service.filter.Filter;
+import ro.dragomialin.monitor.service.filter.FilterUtils;
 
 import java.util.List;
 

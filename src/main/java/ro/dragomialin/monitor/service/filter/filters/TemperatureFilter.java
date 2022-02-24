@@ -1,4 +1,4 @@
-package ro.dragomialin.monitor.service.filter;
+package ro.dragomialin.monitor.service.filter.filters;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import ro.dragomialin.monitor.common.AcqusitionType;
 import ro.dragomialin.monitor.common.Data;
 import ro.dragomialin.monitor.common.Subscription;
+import ro.dragomialin.monitor.service.filter.Filter;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TemperatureFilter implements Filter {
     private final ObjectMapper objectMapper;
-    private final List<AcqusitionType> allowedAcqusitions = List.of(AcqusitionType.DTH11, AcqusitionType.DTH22);
+    private final List<AcqusitionType> allowedAcquisition = List.of(AcqusitionType.DTH11, AcqusitionType.DTH22);
 
     @Override
     public boolean apply(Data data, Subscription subscription) {
