@@ -6,10 +6,10 @@
 
     <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <param name="Encoding" value="UTF-8"/>
-        <remoteHost>192.168.49.10</remoteHost>
-        <port>8080</port>
+        <remoteHost>${LOGSTASH_HOST}</remoteHost>
+        <port>${LOGSTASH_PORT}</port>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
-            <customFields>{"appname":"subscription-service"}</customFields>
+            <customFields>{"appname":"${APP_NAME}"}</customFields>
         </encoder>
     </appender>
 
