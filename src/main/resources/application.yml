@@ -18,10 +18,14 @@ spring:
     mongodb:
       uri: ${MONGODB_URI}
   rabbitmq:
-    host: ${RABBITMQ_HOST}
-    port: ${RABBITMQ_PORT}
-    username: ${RABBITMQ_USER}
-    password: ${RABBITMQ_PASS}
+#    host: ${RABBITMQ_HOST}
+#    port: ${RABBITMQ_PORT}
+#    username: ${RABBITMQ_USER}
+#    password: ${RABBITMQ_PASS}
+    host: rabbitmq
+    port: 5672
+    username: user
+    password: hx4vrBmAqIvGTv2b
 server:
   port: 8005
 smartfactory:
