@@ -7,13 +7,6 @@ spring:
         jwt:
           issuerUri: ${KEYCLOAK_URL}/auth/realms/master
           jwkSetUri: ${KEYCLOAK_URL}/auth/realms/master/protocol/openid-connect/certs
-  cloud:
-    loadbalancer:
-      ribbon:
-        enabled: false
-    kubernetes:
-      discovery:
-        all-namespaces: true
   data:
     mongodb:
       uri: ${MONGODB_URI}
